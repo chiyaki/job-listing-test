@@ -1,5 +1,6 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!
+
   def new
     @job = Job.find(params[:job_id])
     @resume = Resume.new
@@ -18,6 +19,7 @@ class ResumesController < ApplicationController
       render :new
     end
   end
+
   private
 
   def resume_params
